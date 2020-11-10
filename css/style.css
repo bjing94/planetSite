@@ -1,0 +1,237 @@
+@font-face {
+    font-family: Proxima Nova Regular;
+    src:  url('../font/ProximaNova-Regular.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.pageWrapper {
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    /* min-width: 800px;
+    min-height: 800px; */
+    left: 0;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/nebula.jpg');
+    background-position: center center;
+
+}
+
+.mainImage {
+    display: flex;
+    position: relative;
+    width: 70vh;
+    height: 70vh;
+    max-height: 400px;
+    max-width: 400px;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/earth.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    border: 0px solid white;
+    transition: transform 0.5s ease-out;
+   
+}
+/* .mainImage:hover {
+    transform: scale(1.1);
+    border: 5px solid white;
+} */
+.mainText{
+    position: absolute;
+    font-family: Proxima Nova Regular;
+    font-size: 100px;
+    color:rgb(240, 248, 130);
+    letter-spacing: 1rem;
+    transition:color 0.5s;
+    cursor: pointer;
+}
+.mainText:hover{
+    color:white;
+}
+.smallText{
+    position: absolute;
+    left:20px;
+    bottom: 20px;
+    font-family: Proxima Nova Regular;
+    font-size: 20px;
+    color:white;
+   
+    transition:color 0.5s;
+}
+.hamburgerButton{
+    width:100px;
+    height: 100px;
+    position: absolute;
+    background:none;
+    border:none;
+    background-image:url('../img/sidebarlogo.png');
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position:center center;
+    transition: transform 0.2s ease-out;
+    cursor: pointer;
+    left:0;
+    z-index: 1;
+}
+.hamburgerButton:hover{
+    transform: scale(1.1);
+    background-image:url('../img/sidebarlogo-active.png');
+}
+
+.hamburgerButton-active{
+    background-image:url('../img/cross.png');
+}
+.hamburgerButton-active:hover{
+    background-image:url('../img/cross-active.png');
+}
+
+.carouselScreen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index:-2;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.0);
+    transform: scale(0.7);
+    transition: all 0.5s ease-in-out;
+    /* transition: background-color 0.2s linear; */
+}
+.carouselScreen-active{
+    position: absolute;
+    z-index:0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    background-color: rgba(0, 0, 0, 0.4);
+    
+}
+.carouselWrapper{
+    overflow: hidden;
+    height: 400px;
+    width:600px;
+
+}
+.carousel{
+    display: flex;
+    flex-direction: column;
+    height:800%; 
+    width:100%;
+    transition: transform 0.5s ease-in-out;
+}
+.slide{
+    /* display: none; */
+    width:600px;
+    height:400px;
+    background:none;
+    transition:all 0.55s ease-in-out;
+    opacity: 1;
+}
+.slide-fade{
+    opacity: 0;
+    transition:all 0.55s ease-in-out;
+}
+.slide a1{
+    position: relative;
+    font-family: Proxima Nova Regular;
+    font-size: 50px;
+    color:white;
+}
+.slide a2{
+    position: relative;
+    font-family: Proxima Nova Regular;
+    font-size: 25px;
+    color:white;
+    top: 10px;
+}
+
+.dot{
+    width:30px;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius:50%;
+    background:none;
+    border:5px solid black;
+    transition:border 0.2s ease-in-out;
+    cursor: pointer;
+
+}
+.dot:hover{
+    
+    border:5px solid white;
+}
+.dot a1{
+    position: absolute;
+    white-space: nowrap;
+    right:40px;
+    color:white;
+    font-family: Proxima Nova Regular;
+    font-size: 15px;
+    opacity:0;
+}
+
+.dotBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    right:20px;
+    width:30px;
+    height:100%;
+    background:none;
+    opacity:1;
+    transition:opacity 0.55s ease-in-out;
+}
+.dotBox-fade{
+    opacity:0;
+    transition:opacity 0.55s ease-in-out;
+}
+
+@media only screen and (max-width:590px){
+    .dotBox{
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width:760px){
+    .hamburgerButton{
+        top:20px;
+    }
+    
+
+}
+@media only screen and (max-width:520px){
+   
+    .slide{
+        width:400px;
+    }
+    .carouselWrapper{
+        width:600px;
+    }
+
+
+}
+
+@media only screen and (max-height:300px){
+    .hamburgerButton{
+        display:none;
+    }
+    
+
+}
+@media only screen and (max-height:100px){
+    .mainText{
+        font-size: 60px;
+    }
+    
+
+}
